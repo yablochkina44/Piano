@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     private AudioSource AudioNotes; 
 
-    [Header("Массив нот")] // будет сверху над массивом отображаться название "Массив нот"
+    [Header("Массив нот")] 
     [SerializeField] private AudioClip[] Notes = new AudioClip[10]; // массив
 
     void Start()
@@ -14,10 +14,9 @@ public class AudioManager : MonoBehaviour
         AudioNotes = GetComponent<AudioSource>(); // получение AudioSource с объекта
     }
     
-    public void PlaySound(int numberNotes) // метод с параметром, с помощью которого будем выбирать трек
+    public void PlaySound(int numberNotes) // метод с параметром, с помощью которого будем выбирать звук
     {
         AudioNotes.PlayOneShot(Notes[numberNotes]); // вопроизведение звука без прерываний
     }
 
-    // Подпишись, бро!
 }
